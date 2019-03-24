@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {  NavModuleModule } from './nav-module/nav-module.module';
+import { FormsModule } from '@angular/forms';
 
+
+
+import {  NavModuleModule } from './nav-module/nav-module.module';
 import { AppRoutingModule } from './app-routing.module';
 import { TraineeModule } from './trainee/trainee.module';
 import { AppComponent } from './app.component';
@@ -18,7 +21,7 @@ import { SramModule } from './sram/sram.module';
 @NgModule({
    declarations: [
       AppComponent,
-      HomeComponent,
+      HomeComponent
 
 
 
@@ -35,7 +38,8 @@ import { SramModule } from './sram/sram.module';
       AboutModule,
       ContactModule,
       SramModule,
-      AppRoutingModule
+      AppRoutingModule,
+      FormsModule
 
    ],
 

@@ -1,4 +1,24 @@
 
- <div class="home">
-   <h3> This is the Landing Page for Home</h3>
- </div>
+
+<div  class="container">
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #sawaForm="ngForm" novalidate>
+        <div class="form-group" >
+            <label for="firstName">First Name</label>
+          <input id="firstName" name="firstName" class="form-control" required minlength="4" appForbiddenName="bob"
+          [(ngModel)]="firstName" #name="ngModel" >
+
+          <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="alert alert-danger">
+              <div *ngIf="firstName.errors.required"> Name is required</div>
+                  <div *ngIf="firstName.errors.minlength">
+                  Name must be at least 4 characters long.
+                  </div>
+                  <div *ngIf="firstName.errors.forbiddenName">
+                    Name cannot be Bob.
+                  </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+
+
