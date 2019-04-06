@@ -1,0 +1,30 @@
+legend {
+    color: white;
+}
+label {
+    font-style: italic;
+    margin-bottom: 1px;
+    color: white;
+}
+
+.form-control, .custom-select{
+    border: none;
+    border-bottom: 1px solid rgb(54, 33, 241);
+    background-color: rgb(195, 230, 231);
+    
+
+}
+
+.btn{
+    background-color: rgb(195, 230, 231);
+    transform: translateY(3);
+}
+.btn:hover{
+    background-color: greenyellow;
+
+}
+.btn:active {
+    background-color: #58b3b3;
+    box-shadow: 0 5px rgb(160, 130, 130);
+    transform: translateY(4px);
+  }

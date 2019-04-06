@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 
 
 
-import {  NavModuleModule } from './nav-module/nav-module.module';
-import { AppRoutingModule } from './app-routing.module';
-import { TraineeModule } from './trainee/trainee.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+
+import { HomeModule } from './home/home.module';
+import { NavModuleModule } from './nav-module/nav-module.module';
+import { TraineeModule } from './trainee/trainee.module';
 import { TrainerModule } from './trainer/trainer.module';
 import { HealthModule } from './health/health.module';
 import { MilitaryModule } from './military/military.module';
@@ -17,18 +16,19 @@ import { EducationModule } from './education/education.module';
 import { AboutModule } from './about/about.module';
 import { ContactModule } from './contact/contact.module';
 import { SramModule } from './sram/sram.module';
+import { ServicesModule } from './services/services.module';
+import { AppRoutingModule } from './app-routing.module';
+
 
 @NgModule({
    declarations: [
-      AppComponent,
-      HomeComponent
-
-
+      AppComponent
 
    ],
    imports: [
       BrowserModule,
       NavModuleModule,
+      HomeModule,
       TraineeModule,
       TrainerModule,
       HealthModule,
@@ -38,8 +38,8 @@ import { SramModule } from './sram/sram.module';
       AboutModule,
       ContactModule,
       SramModule,
-      AppRoutingModule,
-      FormsModule
+      ServicesModule,
+      AppRoutingModule
 
    ],
 

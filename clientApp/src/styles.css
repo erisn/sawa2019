@@ -2,7 +2,13 @@
 @import "~font-awesome/css/font-awesome.css";
 
 
+
 html, body {
     height: 100%;
     margin: 0px;
+}
+
+.form-control.ng-touched.ng-invalid {
+
+    border: 2px solid red;
 }

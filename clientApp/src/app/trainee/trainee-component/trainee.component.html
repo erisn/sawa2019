@@ -1,3 +1,23 @@
-<h3>
- This is the landing Page for the Trainee
-</h3>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 left">
+          <h4>ACTIONS</h4>
+          <button type="button" class="btn btn-outline-info btn-block" routerLink="/trainee/profile">Profile</button>
+          <button type="button" class="btn btn-outline-info btn-block" routerLink="/trainee/grade">Grade</button>
+          <button type="button" class="btn btn-outline-info btn-block" routerLink="/trainee/request">Request</button>
+          <button type="button" class="btn btn-outline-info btn-block" routerLink="/trainee/upload">Upload</button>
+          <button type="button" class="btn btn-outline-info btn-block" routerLink="/trainee/militaryStatus">Military Status</button>
+      </div>
+      <div class="col-sm-6 center">
+                    
+          <router-outlet></router-outlet>
+
+                  
+      </div>
+      <div class="col-sm-3 right">
+
+          <h2>Advertisement</h2>
+        
+      </div>
+    </div>
+  </div>
