@@ -1,5 +1,8 @@
+.center, .left, .right{
+      border: 2px solid black;
+      height: 92vh;
+}
+
 h3{
-    padding-top: 50px;
-    text-align: center;
-    color: blue;
+  text-align: center;
 }

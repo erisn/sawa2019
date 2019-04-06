@@ -1,3 +1,16 @@
-<h3>
-  Landing Page for Education
-</h3>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 left">
+      <h3>actions</h3>
+      <button type="button" class="btn btn-success btn-block" routerLink="/education/edu1">EDU1</button>
+      <button type="button" class="btn btn-success btn-block" routerLink="/education/edu2">EDU2</button>
+      <button type="button" class="btn btn-success btn-block" routerLink="/education/edu3">EDU3</button>
+    </div>
+    <div class="col-sm-6 center">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="col-sm-3 right">
+      advertise
+    </div>
+  </div>
+</div>

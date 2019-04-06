@@ -1,3 +1,16 @@
-<h3>
-  Landing page for About
-</h3>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 left">
+        <h3>actions</h3>
+        <button type="button" class="btn btn-success btn-block" routerLink="/about/us1">us1</button>
+        <button type="button" class="btn btn-success btn-block" routerLink="/about/us2">us2</button>
+        <button type="button" class="btn btn-success btn-block" routerLink="/about/us3">us3</button>
+      </div>
+      <div class="col-sm-6 center">
+        <router-outlet></router-outlet>
+      </div>
+      <div class="col-sm-3 right">
+        advertise
+      </div>
+    </div>
+  </div>
