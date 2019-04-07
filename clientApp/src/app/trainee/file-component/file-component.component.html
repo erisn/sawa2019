@@ -1,16 +1,59 @@
 
 
 <div class="container">
-    <h1> Just test form</h1>
-    <form  #myupload="ngForm" (ngSubmit)="upload()">
-        <div class="form-group">
-            <label for="exampleFormControlFile1">Example file upload</label>
-            <input type="file" (change)="upload2($event)"  class="form-control-file"  id="exampleFormControlFile1"
-            >
-          </div>
-
-          <button type="submit" (click)="upload()">Upload</button>
+   <div class="row">
+    <form  #myupload="ngForm">
+      <div class="form-group">
+          <label for="exampleFormControlFile1">Select File</label>
+          <input type="file" (change)="upload2($event)"  class="form-control-file"  id="exampleFormControlFile1">
+        </div>
+    </form>
+   </div>
+   <div class="row">
+      <form  #myupload="ngForm" (ngSubmit)="upload()">
+        <button type="submit" >Upload File</button>
       </form>
+   </div>
+
+   <div>
+      <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Owner</th>
+              <th scope="col">File Name</th>
+              <th scope="col">Size</th>
+              <th scope="col">Date Modified</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+
+                <tr *ngFor="let file of fileinfosMap.values()">
+                    <td>
+                        {{file.owner}}
+                    </td>
+                    <td>
+                        {{file.filename}}
+                    </td>
+                    <td>
+                        {{file.size}}
+                    </td>
+                    <td>
+                        {{file.data}}
+                    </td>
+                    <td>
+                        <button type="submit" (click)="removeFile(file.filename)" >X</button>
+                    </td>
+                  </tr>
+
+          </tbody>
+        </table>
+
+
+   </div>
+
+
+
 </div>
 
 

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 import {TraineeComponent} from './trainee-component/trainee.component';
@@ -26,7 +28,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
   imports: [
     CommonModule,
     FormsModule,
-    TraineeRoutingModule
+    TraineeRoutingModule,
+    HttpClientModule
 
   ],
   exports: [
