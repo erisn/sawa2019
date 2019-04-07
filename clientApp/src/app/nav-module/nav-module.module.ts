@@ -5,6 +5,9 @@ import { NavModuleComponent } from './nav-module.component';
 import { TraineeRoutingModule } from '../trainee/trainee-routing.module';
 import { TrainerRoutingModule } from '../trainer/trainer-routing.module';
 import { ServiceRoutingModule } from '../services/Service-routing.module';
+import { EducationRoutingModule } from '../education/education-routing.module';
+import { AboutRoutingModule } from '../about/about-routing.module';
+import { contactRoutingModule } from '../contact/contact-routing.module';
 
 
 @NgModule({
@@ -13,7 +16,10 @@ import { ServiceRoutingModule } from '../services/Service-routing.module';
     // Important! Import all available child routing modules
     TraineeRoutingModule,
     TrainerRoutingModule,
-    ServiceRoutingModule
+    ServiceRoutingModule,
+    EducationRoutingModule,
+    AboutRoutingModule,
+    contactRoutingModule
   ],
   exports: [
     NavModuleComponent

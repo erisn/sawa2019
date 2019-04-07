@@ -4,7 +4,8 @@ import { AboutComponentComponent } from './about-component/about-component.compo
 import { Us1Component } from './us1/us1.component';
 import { Us2Component } from './us2/us2.component';
 import { Us3Component } from './us3/us3.component';
-import { AppRoutingModule } from '../app-routing.module';
+import { AboutRoutingModule } from './about-routing.module';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { AppRoutingModule } from '../app-routing.module';
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    AboutRoutingModule
   ],
   exports: [
     AboutComponentComponent

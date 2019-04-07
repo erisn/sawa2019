@@ -5,6 +5,7 @@ import { Con1Component } from './con1/con1.component';
 import { Con2Component } from './con2/con2.component';
 import { Con3Component } from './con3/con3.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { contactRoutingModule } from './contact-routing.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { AppRoutingModule } from '../app-routing.module';
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    contactRoutingModule
   ],
   exports: [
     ContactComponentComponent

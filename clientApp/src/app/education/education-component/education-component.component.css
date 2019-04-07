@@ -1,6 +1,7 @@
 .center, .left, .right{
       border: 2px solid black;
       height: 92vh;
+      background-color:gray;
 }
 
 h3{
