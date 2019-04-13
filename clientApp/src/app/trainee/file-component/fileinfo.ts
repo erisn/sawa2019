@@ -1,7 +1,7 @@
 export class Fileinfo {
-  public owner:string;
+  public owner: String;
   public filename: String;
   public size: number;
- public  data: number;
+  public  data: number;
 }
 

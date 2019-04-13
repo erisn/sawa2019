@@ -7,7 +7,7 @@ import {Fileinfo} from './fileinfo';
   templateUrl: './file-component.component.html',
   styleUrls: ['./file-component.component.css']
 })
-export class FileComponentComponent implements OnInit{
+export class FileComponentComponent implements OnInit {
   file: string;
   fileToUpLoad: File = null;
   fileinfos: Fileinfo[] = [];
@@ -19,7 +19,7 @@ export class FileComponentComponent implements OnInit{
   ngOnInit() {
   }
 
-  upload(){
+  upload() {
     console.log('I am clicked .....');
     let fileinfo: Fileinfo;
     fileinfo = new Fileinfo();
@@ -31,30 +31,29 @@ export class FileComponentComponent implements OnInit{
     this.fileinfosMap.set(this.fileToUpLoad.name, fileinfo);
 
     const fd = new FormData();
-    fd.append('file', this.fileToUpLoad, this.fileToUpLoad.name)
-    this.http.post('/upload', fd ,{
+    fd.append('file', this.fileToUpLoad, this.fileToUpLoad.name);
+    this.http.post('/upload', fd , {
       reportProgress: true,
       observe: 'events'
-    })
-    .subscribe(events=>{
+    }).subscribe(events => {
       console.log(events);
-    })
+    });
   }
 
-  upload2(event){
+  upload2(event) {
     console.log(event);
     this.fileToUpLoad = <File>event.target.files[0];
 
     console.log('I am clicked event trigger *****');
   }
 
-  removeFile(key){
+  removeFile(key) {
     this.fileinfosMap.delete(key);
   }
 
 
  // ngOnChanges(files: FileList) {
    // this.fileToUpload = files.item(0);
-    //console.log('I am clicked event trigger *****');
+    // console.log('I am clicked event trigger *****');
  // }
 }

@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'home', loadChildren: '../app/home/home.module#HomeModule'},
   { path: 'trainee', loadChildren: '../app/trainee/trainee.module#TraineeModule'},
-{ path: 'trainer', loadChildren: '../app/trainer/trainer.module#TrainerModule'}
+  { path: 'trainer', loadChildren: '../app/trainer/trainer.module#TrainerModule'}
 ];
 
 

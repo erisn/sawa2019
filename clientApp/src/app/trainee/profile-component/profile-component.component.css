@@ -1,10 +1,10 @@
 legend {
-    color: white;
+    color: black;
 }
 label {
     font-style: italic;
     margin-bottom: 1px;
-    color: white;
+    color: black;
 }
 
 .form-control, .custom-select{

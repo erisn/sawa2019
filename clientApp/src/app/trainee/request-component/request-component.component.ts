@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RequestInfo } from './requestInfo';
+import { RequestService } from './request.service';
 
 @Component({
   selector: 'app-request-component',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RequestComponentComponent implements OnInit {
 
-  constructor() { }
+  requestInfo = new RequestInfo();
 
-  ngOnInit() {
+  constructor (private requestService: RequestService) {}
+
+  submitRequest() {
+
+    // console.log(this.requestInfo);
+
+    this.requestService.requestMail(this.requestInfo)
+      .subscribe(
+          data => console.log ('Success!', data),
+          error => console.error('Error!', error)
+        );
+
   }
 
-}
+  ngOnInit() {}
+
+
+  }
+
