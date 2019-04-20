@@ -25,14 +25,14 @@ export class FileComponentComponent implements OnInit {
     fileinfo = new Fileinfo();
     fileinfo.owner = 'OwnerToAll';
     fileinfo.filename = this.fileToUpLoad.name;
-    fileinfo.data = this.fileToUpLoad.lastModified;
+    fileinfo.date = this.fileToUpLoad.lastModified;
     fileinfo.size = this.fileToUpLoad.size;
-    this.fileinfos.push(fileinfo);
+    //this.fileinfos.push(fileinfo);
     this.fileinfosMap.set(this.fileToUpLoad.name, fileinfo);
 
     const fd = new FormData();
     fd.append('file', this.fileToUpLoad, this.fileToUpLoad.name);
-    this.http.post('/upload', fd , {
+    this.http.post('/upload', fd ,{
       reportProgress: true,
       observe: 'events'
     }).subscribe(events => {
