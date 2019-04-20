@@ -13,19 +13,20 @@ export class RequestComponentComponent implements OnInit {
 
   constructor (private requestService: RequestService) {}
 
+
   submitRequest() {
-
-    // console.log(this.requestInfo);
-
+     // console.log(this.requestInfo);
     this.requestService.requestMail(this.requestInfo)
       .subscribe(
-          data => console.log ('Success!', data),
-          error => console.error('Error!', error)
-        );
+          data => console.log ('POST request Success!', data),
+          error => console.log('Error!', error)
+        )
 
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
 
 
   }

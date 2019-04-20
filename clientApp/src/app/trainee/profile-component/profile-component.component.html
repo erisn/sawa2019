@@ -22,14 +22,14 @@
                       placeholder="">
 
                     <div 
-                      class= "alert alert-danger" 
+                      class= "help is-error" 
                         *ngIf="firstName.touched && !firstName.valid">
                             <div *ngIf="firstName?.errors.required">
-                                    First Name is required!</div>
+                              <span style="color: red; font-style:italic">First Name is required!</span></div>
                             <div *ngIf="firstName?.errors.minlength">
-                                    First Name should be minimum of {{firstName?.errors.minlength.requiredLength}} characters</div>
+                              <span style="color: red; font-style:italic">First Name should be minimum of {{firstName?.errors.minlength.requiredLength}} characters</span></div>
                             <div *ngIf="firstName?.errors.pattern">
-                                    First Name doesn't match the pattern</div>
+                              <span style="color: red; font-style:italic">First Name doesn't match the pattern</span></div>
 
                     </div>
               </div>
@@ -49,14 +49,14 @@
                       placeholder="">
 
                     <div 
-                      class="alert alert-danger" 
+                      class="help is-error" 
                         *ngIf="lastName.touched && !lastName.valid">
                             <div *ngIf="lastName?.errors.required"> 
-                                  Last Name is required</div>
+                              <span style="color: red; font-style:italic">Last Name is required</span></div>
                             <div *ngIf="lastName?.errors.minlength">
-                                  Last Name should be minimum of {{lastName?.errors.minlength.requiredLength}} characters long</div>
+                              <span style="color: red; font-style:italic">Last Name should be minimum of {{lastName?.errors.minlength.requiredLength}} characters long</span></div>
                             <div *ngIf="lastName?.errors.pattern">
-                                  Last Name doesn't match the pattern</div>
+                              <span style="color: red; font-style:italic">Last Name doesn't match the pattern</span></div>
 
                     </div>
 
@@ -88,10 +88,10 @@
                         id="birthDate" 
                         placeholder=""> 
                         
-                        <div class="alert alert-danger"
+                        <div class="help is-error"
                           *ngIf="birthDate.touched && !birthDate.valid">
                             <div *ngIf="birthDate?.errors.required">
-                                Birth Date is required</div>
+                              <span style="color: red; font-style:italic">Birth Date is required</span></div>
 
                         </div>
               </div>
@@ -107,12 +107,12 @@
                         class="form-control"
                         id="phoneNumber" 
                         placeholder="123-456-7890">
-                        <div class="alert alert-danger" 
+                        <div class="help is-error" 
                           *ngIf="phoneNumber.touched && !phoneNumber.valid">
                               <div *ngIf="phoneNumber?.errors.required">
-                                  Phone Number is required </div>
+                                <span style="color: red; font-style:italic">Phone Number is required</span> </div>
                               <div *ngIf="phoneNumber?.errors.minlength">
-                                Phone number should be {{ phoneNumber?.errors.minlength.requiredLength }} digits long </div>
+                                <span style="color: red; font-style:italic">Phone number should be {{ phoneNumber?.errors.minlength.requiredLength }} digits long </span></div>
                         </div>
               </div>
           </div>                      
@@ -133,12 +133,12 @@
                       id="motherName" 
                       placeholder="">
 
-                      <div class="alert alert-danger"
+                      <div class="help is-error"
                         *ngIf="motherName.touched && !motherName.errors.valid">
                             <div *ngIf="motherName?.errors.required ">
-                                Mother's Name is required</div>
+                              <span style="color: red; font-style:italic">Mother's Name is required</span></div>
                             <div *ngIf="motherName?.errors.minlength">
-                                Mother Name should be atleast {{ motherName?.errors.minlength.requiredLength }} characters long
+                              <span style="color: red; font-style:italic"> Mother Name should be atleast {{ motherName?.errors.minlength.requiredLength }} characters long</span>
 
                             </div>
                       </div>
@@ -158,12 +158,12 @@
                     id="mothersFather" 
                     placeholder="">
 
-                      <div class="alert alert-danger"
+                      <div class="help is-error"
                         *ngIf="mothersFather.touched && !mothersFather.valid">
                             <div *ngIf="mothersFather?.errors.required">
-                                Mother´s Father Name is required</div>
+                              <span style="color: red; font-style:italic"> Mother´s Father Name is required</span></div>
                             <div *ngIf="mothersFather?.errors.minlength">
-                                Mother's Father Name should be at least {{mothersFather?.errors.minlength.requiredLength}} characters</div>
+                              <span style="color: red; font-style:italic">Mother's Father Name should be at least {{mothersFather?.errors.minlength.requiredLength}} characters</span></div>
                       </div>
               </div>
         </div>

@@ -3,4 +3,6 @@ export class RequestInfo {
   public email: String;
   public subject: String;
   public body: String;
+
+  constructor() {}
 }

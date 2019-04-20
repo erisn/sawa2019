@@ -2,13 +2,10 @@
   name="form"
   (ngSubmit)="f.form.valid && submitRequest()"
   #f="ngForm"
-  novalidate
->
-  <h2
-    style="background-color:darkturquoise; padding:10px; text-align: center; border-bottom: double black"
-  >
-    Request Form
-  </h2>
+  novalidate>
+  
+  <h2> Request Form </h2>
+
   <div class="form-group">
     <label for="name">Name</label>
     <input
@@ -29,10 +26,7 @@
       </div>
       <div *ngIf="nameInput?.errors.minlength">
         <span style="color: red; font-style:italic">
-          Name should be atleast
-          {{ nameInput?.errors.minlength.requiredLength }} characters
-          long!</span
-        >
+          Name should be atleast {{ nameInput?.errors.minlength.requiredLength }} characters long!</span>
       </div>
     </div>
   </div>
@@ -78,16 +72,13 @@
 
     <div
       class="help is-error"
-      *ngIf="subjectInput.touched && !subjectInput.valid"
-    >
+      *ngIf="subjectInput.touched && !subjectInput.valid">
       <div *ngIf="subjectInput?.errors.required">
         <span style="color: red; font-style:italic">Subject is required!</span>
       </div>
       <div *ngIf="subjectInput?.errors.minlength">
         <span style="color: red; font-style:italic">
-          Please enter atleast
-          {{ subjectInput?.errors.minlength.requiredLength }} characters!</span
-        >
+          Please enter atleast {{ subjectInput?.errors.minlength.requiredLength }} characters!</span>
       </div>
     </div>
   </div>
@@ -117,11 +108,9 @@
       </div>
       <div *ngIf="bodyInput?.errors.minlength">
         <span style="color: red; font-style:italic">
-          Please enter atleast
-          {{ bodyInput?.errors.minlength.requiredLength }} characters!</span
-        >
+          Please enter atleast {{ bodyInput?.errors.minlength.requiredLength }} characters!</span>
       </div>
     </div>
   </div>
-  <button type="submit" class="btn btn-info">Send Request</button>
+  <button type="submit" class="btn btn-success">Send Request</button>
 </form>

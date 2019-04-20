@@ -2,3 +2,11 @@ label {
     margin-bottom: 2px;
     font-style: italic;
 }
+h2{
+    color: white; 
+    background-color:rgb(32, 53, 173); 
+    padding:10px; 
+    text-align: center; 
+    border-bottom: double rgb(250, 247, 247);
+
+}

@@ -30,7 +30,6 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     FormsModule,
     TraineeRoutingModule
 
-
   ],
   exports: [
     TraineeComponent,

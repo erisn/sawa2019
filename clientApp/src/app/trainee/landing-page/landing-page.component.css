@@ -1,0 +1,12 @@
+.jumbotron{
+    height: 100%;
+    color:rgb(32, 53, 173);
+    background-color: rgb(193, 193, 211);
+}
+
+.fa-li {
+    color: green;
+}
+ul{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
