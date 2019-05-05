@@ -1,211 +1,269 @@
 <div class="container-fluid profile-form">
+  <form name="form" 
+  (ngSubmit)="f.form.valid && submitProfile()" 
+  #f="ngForm"
+  novalidate>
+    <fieldset>
+      <legend>Profile Info:</legend>
+      <br />
 
-    <form  #userForm ="" (ngSubmit) = "onSubmit()">
-      <fieldset>
-          <legend>Profile Info:</legend>
-          <br>
-        
-          <div class="form-row"> 
-                <div class="form-group col-md-6">
-                  <label for="firstName">First Name</label>
-                  <input 
-                    required 
-                      minlength="3" 
-                      maxLength="15" 
-                      pattern="" 
-                    ngModel 
-                      name="firstName" 
-                      #firstName="ngModel"
-                      type="text" 
-                      class="form-control"
-                      id="firstName"
-                      placeholder="">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="firstName">First Name</label>
+          <input
+            required
+            minlength="3"
+            maxLength="15"
+            pattern=""
+            [(ngModel)]="profileInfo.firstName"
+            name="firstName"
+            #firstName="ngModel"
+            type="text"
+            class="form-control"
+            id="firstName"
+            placeholder=""
+          />
 
-                    <div 
-                      class= "help is-error" 
-                        *ngIf="firstName.touched && !firstName.valid">
-                            <div *ngIf="firstName?.errors.required">
-                              <span style="color: red; font-style:italic">First Name is required!</span></div>
-                            <div *ngIf="firstName?.errors.minlength">
-                              <span style="color: red; font-style:italic">First Name should be minimum of {{firstName?.errors.minlength.requiredLength}} characters</span></div>
-                            <div *ngIf="firstName?.errors.pattern">
-                              <span style="color: red; font-style:italic">First Name doesn't match the pattern</span></div>
-
-                    </div>
-              </div>
-              <div class="form-group col-md-6">
-                  <label for="lastName">Last Name</label>
-                  <input 
-                    required
-                      minlength="3"
-                      maxlength="15"
-                      pattern=""
-                    ngModel
-                      name="lastName"
-                      #lastName="ngModel"
-                      type="text"
-                      class="form-control"
-                      id="lastName"
-                      placeholder="">
-
-                    <div 
-                      class="help is-error" 
-                        *ngIf="lastName.touched && !lastName.valid">
-                            <div *ngIf="lastName?.errors.required"> 
-                              <span style="color: red; font-style:italic">Last Name is required</span></div>
-                            <div *ngIf="lastName?.errors.minlength">
-                              <span style="color: red; font-style:italic">Last Name should be minimum of {{lastName?.errors.minlength.requiredLength}} characters long</span></div>
-                            <div *ngIf="lastName?.errors.pattern">
-                              <span style="color: red; font-style:italic">Last Name doesn't match the pattern</span></div>
-
-                    </div>
-
-                  
-              </div>
+          <div
+            class="help is-error"
+            *ngIf="firstName.touched && !firstName.valid"
+          >
+            <div *ngIf="firstName?.errors.required">
+              <span style="color: red; font-style:italic"
+                >First Name is required!</span
+              >
+            </div>
+            <div *ngIf="firstName?.errors.minlength">
+              <span style="color: red; font-style:italic"
+                >First Name should be minimum of
+                {{
+                  firstName?.errors.minlength.requiredLength
+                }}
+                characters</span
+              >
+            </div>
+            <div *ngIf="firstName?.errors.pattern">
+              <span style="color: red; font-style:italic"
+                >First Name doesn't match the pattern</span
+              >
+            </div>
           </div>
-          <div class="form-row">
-              <div class="form-group col-md-2">
-                  <label for="gender">Gender</label>
-                                      
-                  <select class="custom-select" id="gender">
-                    <option selected disabled>Select</option>
-                    <option value="M">Male</option>
-                    <option value="F">Female</option>
-                  </select>         
-              </div>
-            
-              <div class="form-group col-md-4">
-                  <label for="birthDate">Birth Date</label>
-             
-                  <input 
-                      required 
-                      ngModel 
-                        name="birthDate"
-                        #birthDate="ngModel"
-                        type="Date"
-                        class="form-control" 
-                        min="1950-01-01"
-                        id="birthDate" 
-                        placeholder=""> 
-                        
-                        <div class="help is-error"
-                          *ngIf="birthDate.touched && !birthDate.valid">
-                            <div *ngIf="birthDate?.errors.required">
-                              <span style="color: red; font-style:italic">Birth Date is required</span></div>
-
-                        </div>
-              </div>
-              <div class="form-group col-md-6">
-                  <label for="phoneNumber">Phone Number</label>
-                  <input 
-                      required 
-                        minlength="10"
-                        ngModel 
-                        name="phoneNumber"
-                        #phoneNumber="ngModel"
-                        type="number" 
-                        class="form-control"
-                        id="phoneNumber" 
-                        placeholder="123-456-7890">
-                        <div class="help is-error" 
-                          *ngIf="phoneNumber.touched && !phoneNumber.valid">
-                              <div *ngIf="phoneNumber?.errors.required">
-                                <span style="color: red; font-style:italic">Phone Number is required</span> </div>
-                              <div *ngIf="phoneNumber?.errors.minlength">
-                                <span style="color: red; font-style:italic">Phone number should be {{ phoneNumber?.errors.minlength.requiredLength }} digits long </span></div>
-                        </div>
-              </div>
-          </div>                      
-          <br>
-          <div class="form-row">
-              <div class="form-group col-md-6">
-                  <label for="inputAddress">Mother's Name</label>
-                  <input 
-                      required 
-                      minlength="3" 
-                      maxlength="20"
-                      pattern="" 
-                      ngModel 
-                      name="motherName"
-                      #motherName="ngModel"
-                      type="text" 
-                      class="form-control"
-                      id="motherName" 
-                      placeholder="">
-
-                      <div class="help is-error"
-                        *ngIf="motherName.touched && !motherName.errors.valid">
-                            <div *ngIf="motherName?.errors.required ">
-                              <span style="color: red; font-style:italic">Mother's Name is required</span></div>
-                            <div *ngIf="motherName?.errors.minlength">
-                              <span style="color: red; font-style:italic"> Mother Name should be atleast {{ motherName?.errors.minlength.requiredLength }} characters long</span>
-
-                            </div>
-                      </div>
-              </div>
-              <div class="form-group col-md-6">
-                  <label for="mothersFather">Mother's Father Name</label>
-                  <input 
-                    required 
-                    minlength="3" 
-                    maxlength="15" 
-                    pattern="" 
-                    ngModel 
-                    name="mothersFather" 
-                    #mothersFather="ngModel"
-                    type="text" 
-                    class="form-control"
-                    id="mothersFather" 
-                    placeholder="">
-
-                      <div class="help is-error"
-                        *ngIf="mothersFather.touched && !mothersFather.valid">
-                            <div *ngIf="mothersFather?.errors.required">
-                              <span style="color: red; font-style:italic"> Mother´s Father Name is required</span></div>
-                            <div *ngIf="mothersFather?.errors.minlength">
-                              <span style="color: red; font-style:italic">Mother's Father Name should be at least {{mothersFather?.errors.minlength.requiredLength}} characters</span></div>
-                      </div>
-              </div>
         </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputBiher">Ethnicity/Biher</label>
-                                    
-                <select class="custom-select" id="inputBiher">
-                  <option selected disabled>Select</option>
-                  <option value="Afar">Afar</option>
-                  <option value="Bilen">Bilen</option>
-                  <option value="Hedareb">Hedareb</option>
-                  <option value="Kunama">Kunama</option>
-                  <option value="Rashayda">Rashayda</option>
-                  <option value="Saho">Saho</option>
-                  <option value="Tigre">Tigre</option>
-                  <option value="Tigrinya">Tigrinya</option>
-                  <option value="Nara">Nara</option>
-                  
-                </select>         
-            </div>
+        <div class="form-group col-md-6">
+          <label for="lastName">Last Name</label>
+          <input
+            required
+            minlength="3"
+            maxlength="15"
+            pattern=""
+            [(ngModel)]="profileInfo.lastName"
+            name="lastName"
+            #lastName="ngModel"
+            type="text"
+            class="form-control"
+            id="lastName"
+            placeholder=""
+          />
 
-            <div class="form-group col-md-6">
-                <label for="inputReligion">Religion</label>
-                                    
-                <select class="custom-select" id="inputReligion">
-                  <option selected disabled>Select</option>
-                  <option value="Catholic">Catholic</option>
-                  <option value="Orthodox">Orthodox</option>
-                  <option value="Muslim">Muslim</option>
-                  <option value="Evangelical">Evangelical</option>
-                  <option value="Other">Other</option>
-                </select>         
+          <div
+            class="help is-error"
+            *ngIf="lastName.touched && !lastName.valid"
+          >
+            <div *ngIf="lastName?.errors.required">
+              <span style="color: red; font-style:italic"
+                >Last Name is required</span
+              >
             </div>
-           
-          </div>  
-      
-      <br>
-      <br>
-  
-          <input type="submit" class="btn" value="Submit">
+            <div *ngIf="lastName?.errors.minlength">
+              <span style="color: red; font-style:italic"
+                >Last Name should be minimum of
+                {{ lastName?.errors.minlength.requiredLength }} characters
+                long</span
+              >
+            </div>
+            <div *ngIf="lastName?.errors.pattern">
+              <span style="color: red; font-style:italic"
+                >Last Name doesn't match the pattern</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-2">
+          <label for="gender">Gender</label>
 
-       </fieldset>
-    </form>
-  </div>
+          <select [(ngModel)]="profileInfo.gender" class="custom-select" id="gender" name="gender">
+            <option selected disabled>Select</option>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+          </select>
+        </div>
+
+        <div class="form-group col-md-4">
+          <label for="birthDate">Birth Date</label>
+
+          <input
+            required
+            [(ngModel)]="profileInfo.birthDate"
+            name="birthDate"
+            #birthDate="ngModel"
+            type="Date"
+            class="form-control"
+            min="1950-01-01"
+            id="birthDate"
+            placeholder=""
+          />
+
+          <div
+            class="help is-error"
+            *ngIf="birthDate.touched && !birthDate.valid"
+          >
+            <div *ngIf="birthDate?.errors.required">
+              <span style="color: red; font-style:italic"
+                >Birth Date is required</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="phoneNumber">Phone Number</label>
+          <input
+            required
+            minlength="10"
+            [(ngModel)]="profileInfo.phoneNumber"
+            name="phoneNumber"
+            #phoneNumber="ngModel"
+            type="number"
+            class="form-control"
+            id="phoneNumber"
+            placeholder="123-456-7890"
+          />
+          <div
+            class="help is-error"
+            *ngIf="phoneNumber.touched && !phoneNumber.valid"
+          >
+            <div *ngIf="phoneNumber?.errors.required">
+              <span style="color: red; font-style:italic"
+                >Phone Number is required</span
+              >
+            </div>
+            <div *ngIf="phoneNumber?.errors.minlength">
+              <span style="color: red; font-style:italic"
+                >Phone number should be
+                {{ phoneNumber?.errors.minlength.requiredLength }} digits long
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputAddress">Mother's Name</label>
+          <input
+            required
+            minlength="3"
+            maxlength="20"
+            pattern=""
+            [(ngModel)]="profileInfo.motherName"
+            name="motherName"
+            #motherName="ngModel"
+            type="text"
+            class="form-control"
+            id="motherName"
+            placeholder=""
+          />
+
+          <div
+            class="help is-error"
+            *ngIf="motherName.touched && !motherName.errors.valid">
+            <div *ngIf="motherName?.errors.required">
+              <span style="color: red; font-style:italic"
+                >Mother's Name is required</span>
+            </div>
+            <div *ngIf="motherName?.errors.minlength">
+              <span style="color: red; font-style:italic">
+                Mother Name should be atleast
+                {{ motherName?.errors.minlength.requiredLength }} characters
+                long</span>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="mothersFather">Mother's Father Name</label>
+          <input
+            required
+            minlength="3"
+            maxlength="15"
+            pattern=""
+            [(ngModel)]="profileInfo.mothersFather"
+            name="mothersFather"
+            #mothersFather="ngModel"
+            type="text"
+            class="form-control"
+            id="mothersFather"
+            placeholder=""
+          />
+
+          <div
+            class="help is-error"
+            *ngIf="mothersFather.touched && !mothersFather.valid"
+          >
+            <div *ngIf="mothersFather?.errors.required">
+              <span style="color: red; font-style:italic">
+                Mother´s Father Name is required</span
+              >
+            </div>
+            <div *ngIf="mothersFather?.errors.minlength">
+              <span style="color: red; font-style:italic"
+                >Mother's Father Name should be at least
+                {{
+                  mothersFather?.errors.minlength.requiredLength
+                }}
+                characters</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="ethnicity">Ethnicity/Biher</label>
+
+          <select [(ngModel)]="profileInfo.ethnicity" class="custom-select" id="ethnicity" name="ethnicity">
+            
+            <option selected disabled>Select</option>
+            <option value="Afar">Afar</option>
+            <option value="Bilen">Bilen</option>
+            <option value="Hedareb">Hedareb</option>
+            <option value="Kunama">Kunama</option>
+            <option value="Rashayda">Rashayda</option>
+            <option value="Saho">Saho</option>
+            <option value="Tigre">Tigre</option>
+            <option value="Tigrinya">Tigrinya</option>
+            <option value="Nara">Nara</option>
+          </select>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="religion">Religion</label>
+
+          <select [(ngModel)]="profileInfo.religion" class="custom-select" id="religion" name="religion">
+            <option selected disabled>Select</option>
+            <option value="Catholic">Catholic</option>
+            <option value="Orthodox">Orthodox</option>
+            <option value="Muslim">Muslim</option>
+            <option value="Evangelical">Evangelical</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+
+      <br />
+      <br />
+
+      <input type="submit" class="btn" />
+    </fieldset>
+  </form>
+</div>

@@ -3,8 +3,8 @@
   (ngSubmit)="f.form.valid && submitRequest()"
   #f="ngForm"
   novalidate>
-  
-  <h2> Request Form </h2>
+
+  <h2>Request Form</h2>
 
   <div class="form-group">
     <label for="name">Name</label>
@@ -24,9 +24,13 @@
       <div *ngIf="nameInput?.errors.required">
         <span style="color: red; font-style:italic"> Name is required!</span>
       </div>
+      
       <div *ngIf="nameInput?.errors.minlength">
         <span style="color: red; font-style:italic">
-          Name should be atleast {{ nameInput?.errors.minlength.requiredLength }} characters long!</span>
+          Name should be atleast
+          {{ nameInput?.errors.minlength.requiredLength }} characters
+          long!</span
+        >
       </div>
     </div>
   </div>
@@ -72,13 +76,16 @@
 
     <div
       class="help is-error"
-      *ngIf="subjectInput.touched && !subjectInput.valid">
+      *ngIf="subjectInput.touched && !subjectInput.valid"
+    >
       <div *ngIf="subjectInput?.errors.required">
         <span style="color: red; font-style:italic">Subject is required!</span>
       </div>
       <div *ngIf="subjectInput?.errors.minlength">
         <span style="color: red; font-style:italic">
-          Please enter atleast {{ subjectInput?.errors.minlength.requiredLength }} characters!</span>
+          Please enter atleast
+          {{ subjectInput?.errors.minlength.requiredLength }} characters!</span
+        >
       </div>
     </div>
   </div>
@@ -97,10 +104,7 @@
       rows="10"
     ></textarea>
 
-    <div
-      class="help is-error"
-      *ngIf="bodyInput.touched && !bodyInput.valid"
-    >
+    <div class="help is-error" *ngIf="bodyInput.touched && !bodyInput.valid">
       <div *ngIf="bodyInput?.errors.required">
         <span style="color: red; font-style:italic"
           >Some text content is required!</span
@@ -108,9 +112,14 @@
       </div>
       <div *ngIf="bodyInput?.errors.minlength">
         <span style="color: red; font-style:italic">
-          Please enter atleast {{ bodyInput?.errors.minlength.requiredLength }} characters!</span>
+          Please enter atleast
+          {{ bodyInput?.errors.minlength.requiredLength }} characters!</span
+        >
       </div>
     </div>
   </div>
-  <button type="submit" class="btn btn-success">Send Request</button>
+  <!--The button is disabled until all the fields in the form are valid by using [disabled]="!f.form.valid"-->
+  <button type="submit" [disabled]="!f.form.valid" class="btn btn-success">Send Request</button>
+  
+  
 </form>

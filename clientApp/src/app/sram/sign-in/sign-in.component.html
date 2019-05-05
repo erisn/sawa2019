@@ -1,0 +1,68 @@
+<h3 >Sign-In</h3>
+
+<form
+  name="form"
+  (ngSubmit)="f.form.valid && submitForm()"
+  #f="ngForm"
+  novalidate>
+  
+  <div class="row">
+  <div class="form-group col-md-9">
+    <label for="email">Email</label>
+    <input 
+    required
+    email
+    [(ngModel)]="email"
+    name="email"
+    #emailInput="ngModel"
+    type="email"
+    class="form-control" 
+    id="email" 
+    placeholder="Email"/>
+        <div class="help is-error" *ngIf="emailInput.touched && !emailInput.valid">
+          <div *ngIf="emailInput?.errors.required">
+            <span style="color: red; font-style:italic"> Email is required!</span>
+          </div>
+          
+          <div *ngIf="emailInput?.errors.email">
+            <span style="color: red; font-style:italic">
+              The Email pattern you entered is not valid!
+              </span
+            >
+          </div>
+        </div>
+
+  </div>
+  <div class="form-group col-md-9">
+    <label for="password">Password</label>
+    <input
+    required
+    minlength="8"
+    [(ngModel)]="password"
+    name="password"
+    #passwordInput="ngModel"
+    type="password" 
+    class="form-control" 
+    id="password" 
+    placeholder="Enter Password"/>
+        <div class="help is-error" *ngIf="passwordInput.touched && !passwordInput.valid">
+          <div *ngIf="passwordInput?.errors.required">
+            <span style="color: red; font-style:italic"> Password is required!</span>
+          </div>
+          
+          <div *ngIf="passwordInput?.errors.minlength">
+            <span style="color: red; font-style:italic">
+              Password should be atleast
+              {{ passwordInput?.errors.minlength.requiredLength }} characters
+              long!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    
+    <button type="submit" [disabled]="!f.form.valid" class="btn btn-primary btn-block">Sign-In</button>
+  
+</form>

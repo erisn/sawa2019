@@ -1,5 +1,41 @@
-h3{
-    padding-top: 50px;
+div .row{
+    margin-top: 2px;
+    margin-bottom:5px;
+    justify-content: space-between;
+
+
+}
+div .left, .right{
+    background-color:rgb(32, 53, 173);
+    height: 91vh;
+    border: 1px solid rgb(247, 244, 244);
+    border-radius: 1%;
+}
+.left h4{
+    color: white;
     text-align: center;
-    color: blue;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.left .btn{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-style: italic;
+    border-color: rgb(233, 229, 229);
+
+}
+.center {
+    padding-left: 0px;
+    padding-right:0px;
+    border: 1px solid rgb(221, 223, 235);
+    border-radius: 1%;
+    background-color: rgb(241, 242, 248);
+}
+
+.right{
+    color: gold;
+    text-align: center;
+    padding-top: 70px;
+
 }

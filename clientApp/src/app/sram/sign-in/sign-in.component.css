@@ -1,0 +1,20 @@
+h3{
+    color: rgb(32, 53, 173);
+    text-align: center;
+}
+.form-control{
+    border: none;
+    border-bottom: 2px solid rgb(32, 53, 173);
+
+}
+.form-group{
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20px;
+}
+.btn {
+    width: 50%;
+    margin: auto;
+    background-color: rgb(32, 53, 173);
+}

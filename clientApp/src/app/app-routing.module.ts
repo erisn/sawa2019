@@ -3,18 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 
-import { SramComponentComponent } from './sram/sram-component/sram-component.component';
-
-import { AboutComponentComponent } from './about/about-component/about-component.component';
-
 
 const routes: Routes = [
-  { path: 'service', component: AboutComponentComponent},
-  { path: 'sign', component: SramComponentComponent},
-  { path: '', redirectTo: '/home', pathMatch: 'full'},
+
   { path: 'home', loadChildren: '../app/home/home.module#HomeModule'},
   { path: 'trainee', loadChildren: '../app/trainee/trainee.module#TraineeModule'},
-  { path: 'trainer', loadChildren: '../app/trainer/trainer.module#TrainerModule'}
+  { path: 'trainer', loadChildren: '../app/trainer/trainer.module#TrainerModule'},
+  { path: 'sram', loadChildren: '../app/sram/sram.module#SramModule'},
+  { path: '', redirectTo: '/home', pathMatch: 'full'},
+  { path: '**', redirectTo: '/home', pathMatch: 'full'}
 ];
 
 

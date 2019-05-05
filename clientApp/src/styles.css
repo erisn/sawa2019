@@ -11,4 +11,8 @@ html, body {
 .form-control.ng-touched.ng-invalid {
 
     border: 2px solid red;
+    animation: myerror 2s infinite;
+}
+@keyframes myerror{
+    50% {border-color: rgb(214, 206, 211)}
 }

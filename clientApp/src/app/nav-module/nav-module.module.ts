@@ -8,6 +8,7 @@ import { ServiceRoutingModule } from '../services/Service-routing.module';
 import { EducationRoutingModule } from '../education/education-routing.module';
 import { AboutRoutingModule } from '../about/about-routing.module';
 import { contactRoutingModule } from '../contact/contact-routing.module';
+import { SramRoutingModule } from '../sram/sram-routing.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { contactRoutingModule } from '../contact/contact-routing.module';
     ServiceRoutingModule,
     EducationRoutingModule,
     AboutRoutingModule,
-    contactRoutingModule
+    contactRoutingModule,
+    SramRoutingModule
   ],
   exports: [
     NavModuleComponent
