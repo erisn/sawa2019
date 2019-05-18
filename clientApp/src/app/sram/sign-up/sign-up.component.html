@@ -40,20 +40,48 @@
     minlength="3"
     [(ngModel)]="signUpInfo.lastName"
     name="lastName"
-    #lasttNameInput="ngModel"
+    #lastNameInput="ngModel"
     type="text" 
     class="form-control"
     id="lastName" 
     placeholder="Last Name"/>
-        <div class="help is-error" *ngIf="lasttNameInput.touched && !lasttNameInput.valid">
-          <div *ngIf="lasttNameInput?.errors.required">
+        <div class="help is-error" *ngIf="lastNameInput.touched && !lastNameInput.valid">
+          <div *ngIf="lastNameInput?.errors.required">
             <span style="color: red; font-style:italic"> Last Name is required!</span>
           </div>
           
-          <div *ngIf="lasttNameInput?.errors.minlength">
+          <div *ngIf="lastNameInput?.errors.minlength">
             <span style="color: red; font-style:italic">
               Last Name should be atleast
-              {{ lasttNameInput?.errors.minlength.requiredLength }} characters
+              {{ lastNameInput?.errors.minlength.requiredLength }} characters
+              long!</span
+            >
+          </div>
+        </div>
+    
+    </div>
+  
+  <div class="form-group col-md-9">
+    <label for="username">Username</label>
+    <input 
+    required
+    minlength="3"
+    [(ngModel)]="signUpInfo.username"
+    name="username"
+    #usernameInput="ngModel"
+    type="text" 
+    class="form-control"
+    id="username" 
+    placeholder="Username"/>
+        <div class="help is-error" *ngIf="usernameInput.touched && !usernameInput.valid">
+          <div *ngIf="usernameInput?.errors.required">
+            <span style="color: red; font-style:italic"> Username is required!</span>
+          </div>
+          
+          <div *ngIf="usernameInput?.errors.minlength">
+            <span style="color: red; font-style:italic">
+              Username should be atleast
+              {{ usernameInput?.errors.minlength.requiredLength }} characters
               long!</span
             >
           </div>
@@ -61,6 +89,7 @@
     
     </div>
   </div>
+  
   <div class="row">
   <div class="form-group col-md-9">
     <label for="email">Email</label>

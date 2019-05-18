@@ -2,8 +2,8 @@
   name="form"
   (ngSubmit)="f.form.valid && submitRequest()"
   #f="ngForm"
-  novalidate>
-
+  novalidate
+>
   <h2>Request Form</h2>
 
   <div class="form-group">
@@ -17,14 +17,14 @@
       #nameInput="ngModel"
       type="text"
       class="form-control"
-      id="nameInput"
+      id="name"
       placeholder="Name"
     />
     <div class="help is-error" *ngIf="nameInput.touched && !nameInput.valid">
       <div *ngIf="nameInput?.errors.required">
         <span style="color: red; font-style:italic"> Name is required!</span>
       </div>
-      
+
       <div *ngIf="nameInput?.errors.minlength">
         <span style="color: red; font-style:italic">
           Name should be atleast
@@ -100,7 +100,7 @@
       #bodyInput="ngModel"
       type="text"
       class="form-control"
-      id="message"
+      id="body"
       rows="10"
     ></textarea>
 
@@ -119,7 +119,7 @@
     </div>
   </div>
   <!--The button is disabled until all the fields in the form are valid by using [disabled]="!f.form.valid"-->
-  <button type="submit" [disabled]="!f.form.valid" class="btn btn-success">Send Request</button>
-  
-  
+  <button type="submit" [disabled]="!f.form.valid" class="btn btn-success">
+    Send Request
+  </button>
 </form>

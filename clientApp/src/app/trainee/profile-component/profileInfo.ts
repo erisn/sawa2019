@@ -6,10 +6,11 @@ export class ProfileInfo {
   public phoneNumber: number;
   public motherName: String;
   public mothersFather: String;
-  public ethnicity: String;
+  public biher: String;
   public religion: String;
+  public street: String;
+  public city: String;
+  public zoba: String;
 
-    constructor() {}
-  }
-
-
+  constructor() {}
+}

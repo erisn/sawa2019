@@ -1,5 +1,20 @@
-legend {
-    color: black;
+form{
+    padding: 10px;
+}
+#legend1 {
+    color: rgb(54, 33, 241);
+    font: 25px bold;
+    font-stretch: expanded;
+    padding-top: 10px;
+    text-align: center;
+    border-bottom: 2px solid rgb(54, 33, 241);
+    margin-bottom:0px;
+    
+}
+#legend2 {
+    color: rgb(54, 33, 241);
+    font:20px italic;
+    
 }
 label {
     font-style: italic;
@@ -10,21 +25,17 @@ label {
 .form-control, .custom-select{
     border: none;
     border-bottom: 1px solid rgb(54, 33, 241);
-    background-color: rgb(195, 230, 231);
-    
-
+    background-color: rgb(232, 235, 240);
+    margin-top: 2px
 }
 
 .btn{
-    background-color: rgb(195, 230, 231);
+    background-color: rgb(54, 33, 241);
     transform: translateY(3);
 }
-.btn:hover{
-    background-color: greenyellow;
 
-}
 .btn:active {
-    background-color: #58b3b3;
-    box-shadow: 0 5px rgb(160, 130, 130);
+    background-color: #22bd14;
+    box-shadow: 0 5px rgb(253, 252, 252);
     transform: translateY(4px);
   }

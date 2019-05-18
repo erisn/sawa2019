@@ -10,7 +10,7 @@ html, body {
 
 .form-control.ng-touched.ng-invalid {
 
-    border: 2px solid red;
+    border-bottom: 2px solid red;
     animation: myerror 2s infinite;
 }
 @keyframes myerror{

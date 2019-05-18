@@ -13,3 +13,7 @@ h2{
 .btn {
     background-color:rgb(32, 53, 173);  
 }
+.form-control{
+    border: none;
+    border-bottom: 2px solid rgb(32, 53, 173);
+}
