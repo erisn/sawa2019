@@ -303,7 +303,46 @@
         </div>
       </div>
     </div>
-    <fieldset id="fieldset2">
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="Biher">Department</label>
+
+        <select
+          required
+          [(ngModel)]="profileInfo.biher"
+          class="custom-select"
+          id="Biher"
+          name="biher"
+          #inputBiher="ngModel"
+          class=" form-control form-control-sm"
+        >
+          <option selected disabled>Select</option>
+          <option value="Education">Education</option>
+          <option value="Health">Health</option>
+          <option value="Military">Military</option>
+          
+        </select>
+        <div
+          class="help is-error"
+          *ngIf="inputBiher.touched && !inputBiher.valid"
+        >
+          <div *ngIf="inputBiher?.errors.required">
+            <span style="color: red; font-style:italic">
+              Biher is required</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group col-md-6">
+        
+        
+      </div>
+    </div>
+    
+    <fieldset id="fieldset2" *ngIf="primary">
+
       <legend id="legend2">Address Details</legend>
       <div class="form-row">
         <div class="form-group col-md-12">
@@ -408,6 +447,218 @@
         </div>
       </div>
     </fieldset>
+    <fieldset id="fieldset2" *ngIf="secondary">
+
+        <legend id="legend2">Address Details</legend>
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="Street">Street</label>
+            <input
+              required
+              minlength="10"
+              [(ngModel)]="profileInfo.street"
+              name="street"
+              #inputStreet="ngModel"
+              type="text"
+              class="form-control form-control-sm"
+              id="Street"
+              placeholder=""
+            />
+  
+            <div
+              class="help is-error"
+              *ngIf="inputStreet.touched && !inputStreet.valid"
+            >
+              <div *ngIf="inputStreet?.errors.required">
+                <span style="color: red; font-style:italic">
+                  Address is required</span
+                >
+              </div>
+              <div *ngIf="inputStreet?.errors.minlength">
+                <span style="color: red; font-style:italic">
+                  Address should be at least
+                  {{
+                    inputStreet?.errors.minlength.requiredLength
+                  }}
+                  characters</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="City">City</label>
+            <input
+              required
+              minlength="2"
+              [(ngModel)]="profileInfo.city"
+              name="city"
+              #inputCity="ngModel"
+              type="text"
+              class="form-control form-control-sm"
+              id="City"
+              placeholder
+            />
+  
+            <div
+              class="help is-error"
+              *ngIf="inputCity.touched && !inputCity.valid"
+            >
+              <div *ngIf="inputCity?.errors.required">
+                <span style="color: red; font-style:italic">
+                  City is required</span
+                >
+              </div>
+              <div *ngIf="inputCity?.errors.minlength">
+                <span style="color: red; font-style:italic">
+                  City should be at least
+                  {{
+                    inputCity?.errors.minlength.requiredLength
+                  }}
+                  characters</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="Zoba">Zoba</label>
+            <select
+              required
+              [(ngModel)]="profileInfo.zoba"
+              name="zoba"
+              id="Zoba"
+              class="form-control form-control-sm"
+              #inputZoba="ngModel"
+            >
+              <option selected disabled>Choose...</option>
+              <option value="Anseba">Anseba</option>
+              <option value="Gash Barka">Gash Barka</option>
+              <option value="Maekel">Maekel</option>
+              <option value="Debub">Debub</option>
+              <option value="Semienawi Keyh Bahri">Semienawi Keyh Bahri</option>
+              <option value="Debubawi Keyh Bahri">Debubawi Keyh Bahri</option>
+            </select>
+            <div
+              class="help is-error"
+              *ngIf="inputZoba.touched && !inputZoba.valid"
+            >
+              <div *ngIf="inputZoba?.errors.required">
+                <span style="color: red; font-style:italic">
+                  Zoba is required</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset id="fieldset2" *ngIf="third">
+
+          <legend id="legend2">Address Details</legend>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="Street">Street</label>
+              <input
+                required
+                minlength="10"
+                [(ngModel)]="profileInfo.street"
+                name="street"
+                #inputStreet="ngModel"
+                type="text"
+                class="form-control form-control-sm"
+                id="Street"
+                placeholder=""
+              />
+    
+              <div
+                class="help is-error"
+                *ngIf="inputStreet.touched && !inputStreet.valid"
+              >
+                <div *ngIf="inputStreet?.errors.required">
+                  <span style="color: red; font-style:italic">
+                    Address is required</span
+                  >
+                </div>
+                <div *ngIf="inputStreet?.errors.minlength">
+                  <span style="color: red; font-style:italic">
+                    Address should be at least
+                    {{
+                      inputStreet?.errors.minlength.requiredLength
+                    }}
+                    characters</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="City">City</label>
+              <input
+                required
+                minlength="2"
+                [(ngModel)]="profileInfo.city"
+                name="city"
+                #inputCity="ngModel"
+                type="text"
+                class="form-control form-control-sm"
+                id="City"
+                placeholder
+              />
+    
+              <div
+                class="help is-error"
+                *ngIf="inputCity.touched && !inputCity.valid"
+              >
+                <div *ngIf="inputCity?.errors.required">
+                  <span style="color: red; font-style:italic">
+                    City is required</span
+                  >
+                </div>
+                <div *ngIf="inputCity?.errors.minlength">
+                  <span style="color: red; font-style:italic">
+                    City should be at least
+                    {{
+                      inputCity?.errors.minlength.requiredLength
+                    }}
+                    characters</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="Zoba">Zoba</label>
+              <select
+                required
+                [(ngModel)]="profileInfo.zoba"
+                name="zoba"
+                id="Zoba"
+                class="form-control form-control-sm"
+                #inputZoba="ngModel"
+              >
+                <option selected disabled>Choose...</option>
+                <option value="Anseba">Anseba</option>
+                <option value="Gash Barka">Gash Barka</option>
+                <option value="Maekel">Maekel</option>
+                <option value="Debub">Debub</option>
+                <option value="Semienawi Keyh Bahri">Semienawi Keyh Bahri</option>
+                <option value="Debubawi Keyh Bahri">Debubawi Keyh Bahri</option>
+              </select>
+              <div
+                class="help is-error"
+                *ngIf="inputZoba.touched && !inputZoba.valid"
+              >
+                <div *ngIf="inputZoba?.errors.required">
+                  <span style="color: red; font-style:italic">
+                    Zoba is required</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
     <br />
 
     <button type="submit" [disabled]="!f.form.valid" class="btn">Submit</button>

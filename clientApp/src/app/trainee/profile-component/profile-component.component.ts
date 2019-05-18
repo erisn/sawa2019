@@ -9,6 +9,9 @@ import { ProfileInfo } from './profileInfo';
 })
 export class ProfileComponentComponent implements OnInit {
   profileInfo = new ProfileInfo();
+  primary:boolean=true;
+  secondary:boolean=false;
+  third:boolean=false;
 
   constructor(private profileService: ProfileService) {}
 
