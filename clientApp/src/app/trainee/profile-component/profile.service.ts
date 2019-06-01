@@ -8,10 +8,15 @@ import { ProfileInfo } from './profileInfo';
 export class ProfileService {
 
   url = '/profile';
+  urlGetProf = '/profile/getprofile';
 
   constructor(private http: HttpClient) { }
 
   sendProfile (profileInfo: ProfileInfo) {
     return this.http.post<any>(this.url, profileInfo);
+  }
+
+  getProfile () {
+    return this.http.get<any>(this.urlGetProf);
   }
 }

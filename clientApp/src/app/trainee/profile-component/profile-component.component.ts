@@ -12,6 +12,7 @@ export class ProfileComponentComponent implements OnInit {
   primary:boolean=true;
   secondary:boolean=false;
   third:boolean=false;
+  profileModel:any;
 
   constructor(private profileService: ProfileService) {}
 
@@ -21,9 +22,28 @@ export class ProfileComponentComponent implements OnInit {
     this.profileService
       .sendProfile(this.profileInfo)
       .subscribe(
-        data => console.log('Post request success!', data),
+        data =>{
+          //this.profileModel = data;
+          console.log('Post request success!', data);
+        },
         error => console.log('Error!', error)
       );
   }
-  ngOnInit() {}
+
+  getProfile() {
+
+
+    this.profileService
+      .getProfile()
+      .subscribe(
+        data =>{
+          this.profileModel = data;
+          console.log('Get request success!', data);
+        } ,
+        error => console.log('Error!', error)
+      );
+  }
+  ngOnInit() {
+    this.getProfile();
+  }
 }
