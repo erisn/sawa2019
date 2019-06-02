@@ -15,7 +15,7 @@
           required
           minlength="3"
           maxLength="15"
-          [(ngModel)]="profileInfo.firstName"
+          [(ngModel)]="profileModel.userModels.firstName"
           name="firstName"
           #inputFirstName="ngModel"
           type="text"
@@ -50,7 +50,7 @@
           required
           minlength="3"
           maxlength="15"
-          [(ngModel)]="profileInfo.lastName"
+          [(ngModel)]="profileModel.userModels.lastName"
           name="lastName"
           #inputLastName="ngModel"
           type="text"
@@ -84,7 +84,7 @@
 
         <select
           required
-          [(ngModel)]="profileInfo.gender"
+          [(ngModel)]="profileModel.gender"
           class="custom-select"
           id="Gender"
           name="gender"
@@ -112,7 +112,7 @@
 
         <input
           required
-          [(ngModel)]="profileInfo.birthDate"
+          [(ngModel)]="profileModel.dob"
           name="birthDate"
           #inputBirthDate="ngModel"
           type="Date"
@@ -138,7 +138,7 @@
         <input
           required
           minlength="10"
-          [(ngModel)]="profileInfo.phoneNumber"
+          [(ngModel)]="profileModel.phoneNumber"
           name="phoneNumber"
           #inputPhoneNumber="ngModel"
           type="tel"
@@ -173,7 +173,7 @@
           required
           minlength="3"
           maxlength="20"
-          [(ngModel)]="profileInfo.motherName"
+          [(ngModel)]="profileModel.motherName"
           name="motherName"
           #inputMotherName="ngModel"
           type="text"
@@ -206,7 +206,7 @@
           required
           minlength="3"
           maxlength="15"
-          [(ngModel)]="profileInfo.mothersFather"
+          [(ngModel)]="profileModel.motherFatherName"
           name="mothersFather"
           #inputMothersFather="ngModel"
           type="text"
@@ -306,22 +306,23 @@
 
     <div class="form-row">
       <div class="form-group col-md-6">
-        <label for="Biher">Department</label>
+        <label for="Department">Department</label>
 
         <select
           required
           [(ngModel)]="profileInfo.biher"
           class="custom-select"
-          id="Biher"
+          id="Department"
           name="biher"
           #inputBiher="ngModel"
           class=" form-control form-control-sm"
         >
-          <option selected disabled>Select</option>
-          <option value="Education">Education</option>
-          <option value="Health">Health</option>
-          <option value="Military">Military</option>
-          
+
+
+
+          <option *ngFor="let department of  profileModel.departmentModels" disabled>{{department.departmentName}}</option>
+
+
         </select>
         <div
           class="help is-error"
@@ -336,11 +337,11 @@
       </div>
 
       <div class="form-group col-md-6">
-        
-        
+
+
       </div>
     </div>
-    
+
     <fieldset id="fieldset2" *ngIf="primary">
 
       <legend id="legend2">Address Details</legend>
@@ -464,7 +465,7 @@
               id="Street"
               placeholder=""
             />
-  
+
             <div
               class="help is-error"
               *ngIf="inputStreet.touched && !inputStreet.valid"
@@ -486,7 +487,7 @@
             </div>
           </div>
         </div>
-  
+
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="City">City</label>
@@ -501,7 +502,7 @@
               id="City"
               placeholder
             />
-  
+
             <div
               class="help is-error"
               *ngIf="inputCity.touched && !inputCity.valid"
@@ -570,7 +571,7 @@
                 id="Street"
                 placeholder=""
               />
-    
+
               <div
                 class="help is-error"
                 *ngIf="inputStreet.touched && !inputStreet.valid"
@@ -592,7 +593,7 @@
               </div>
             </div>
           </div>
-    
+
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="City">City</label>
@@ -607,7 +608,7 @@
                 id="City"
                 placeholder
               />
-    
+
               <div
                 class="help is-error"
                 *ngIf="inputCity.touched && !inputCity.valid"
