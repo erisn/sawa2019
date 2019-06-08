@@ -28,16 +28,16 @@
           class="help is-error"
           *ngIf="inputFirstName.touched && !inputFirstName.valid"
         >
-          <div *ngIf="inputFirstName?.errors.required">
+          <div *ngIf="inputFirstName?.errors?.required">
             <span style="color: red; font-style:italic"
               >First Name is required!</span
             >
           </div>
-          <div *ngIf="inputFirstName?.errors.minlength">
+          <div *ngIf="inputFirstName?.errors?.minlength">
             <span style="color: red; font-style:italic"
               >First Name should be minimum of
               {{
-                inputFirstName?.errors.minlength.requiredLength
+                inputFirstName?.errors?.minlength.requiredLength
               }}
               characters</span
             >
@@ -63,15 +63,15 @@
           class="help is-error"
           *ngIf="inputLastName.touched && !inputLastName.valid"
         >
-          <div *ngIf="inputLastName?.errors.required">
+          <div *ngIf="inputLastName?.errors?.required">
             <span style="color: red; font-style:italic"
               >Last Name is required</span
             >
           </div>
-          <div *ngIf="inputLastName?.errors.minlength">
+          <div *ngIf="inputLastName?.errors?.minlength">
             <span style="color: red; font-style:italic"
               >Last Name should be minimum of
-              {{ inputLastName?.errors.minlength.requiredLength }} characters
+              {{ inputLastName?.errors?.minlength.requiredLength }} characters
               long</span
             >
           </div>
@@ -99,7 +99,7 @@
           class="help is-error"
           *ngIf="inputGender.touched && !inputGender.valid"
         >
-          <div *ngIf="inputGender?.errors.required">
+          <div *ngIf="inputGender?.errors?.required">
             <span style="color: red; font-style:italic">
               Gender is required</span
             >
@@ -126,7 +126,7 @@
           class="help is-error"
           *ngIf="inputBirthDate.touched && !inputBirthDate.valid"
         >
-          <div *ngIf="inputBirthDate?.errors.required">
+          <div *ngIf="inputBirthDate?.errors?.required">
             <span style="color: red; font-style:italic"
               >Birth Date is required</span
             >
@@ -150,15 +150,15 @@
           class="help is-error"
           *ngIf="inputPhoneNumber.touched && !inputPhoneNumber.valid"
         >
-          <div *ngIf="inputPhoneNumber?.errors.required">
+          <div *ngIf="inputPhoneNumber?.errors?.required">
             <span style="color: red; font-style:italic"
               >Phone Number is required</span
             >
           </div>
-          <div *ngIf="inputPhoneNumber?.errors.minlength">
+          <div *ngIf="inputPhoneNumber?.errors?.minlength">
             <span style="color: red; font-style:italic">
               Phone number should be
-              {{ inputPhoneNumber?.errors.minlength.requiredLength }} digits
+              {{ inputPhoneNumber?.errors?.minlength.requiredLength }} digits
               long
             </span>
           </div>
@@ -186,15 +186,15 @@
           class="help is-error"
           *ngIf="inputMotherName.touched && !inputMotherName.errors.valid"
         >
-          <div *ngIf="inputMotherName?.errors.required">
+          <div *ngIf="inputMotherName?.errors?.required">
             <span style="color: red; font-style:italic"
               >Mother's Name is required</span
             >
           </div>
-          <div *ngIf="inputMotherName?.errors.minlength">
+          <div *ngIf="inputMotherName?.errors?.minlength">
             <span style="color: red; font-style:italic">
               Mother Name should be atleast
-              {{ inputMotherName?.errors.minlength.requiredLength }} characters
+              {{ inputMotherName?.errors?.minlength.requiredLength }} characters
               long</span
             >
           </div>
@@ -219,16 +219,16 @@
           class="help is-error"
           *ngIf="inputMothersFather.touched && !inputMothersFather.valid"
         >
-          <div *ngIf="inputMothersFather?.errors.required">
+          <div *ngIf="inputMothersFather?.errors?.required">
             <span style="color: red; font-style:italic">
               Mother´s Father Name is required</span
             >
           </div>
-          <div *ngIf="inputMothersFather?.errors.minlength">
+          <div *ngIf="inputMothersFather?.errors?.minlength">
             <span style="color: red; font-style:italic"
               >Mother's Father Name should be at least
               {{
-                inputMothersFather?.errors.minlength.requiredLength
+                inputMothersFather?.errors?.minlength.requiredLength
               }}
               characters</span
             >
@@ -242,29 +242,20 @@
 
         <select
           required
-          [(ngModel)]="profileInfo.biher"
+          [(ngModel)]="profileModel.biherModels.biherName"
           class="custom-select"
           id="Biher"
           name="biher"
           #inputBiher="ngModel"
           class=" form-control form-control-sm"
         >
-          <option selected disabled>Select</option>
-          <option value="Afar">Afar</option>
-          <option value="Bilen">Bilen</option>
-          <option value="Hedareb">Hedareb</option>
-          <option value="Kunama">Kunama</option>
-          <option value="Rashayda">Rashayda</option>
-          <option value="Saho">Saho</option>
-          <option value="Tigre">Tigre</option>
-          <option value="Tigrinya">Tigrinya</option>
-          <option value="Nara">Nara</option>
+        <option *ngFor="let biher of  profileModel.biherModels">{{biher.biherName}}</option>
         </select>
         <div
           class="help is-error"
           *ngIf="inputBiher.touched && !inputBiher.valid"
         >
-          <div *ngIf="inputBiher?.errors.required">
+          <div *ngIf="inputBiher?.errors?.required">
             <span style="color: red; font-style:italic">
               Biher is required</span
             >
@@ -277,25 +268,21 @@
 
         <select
           required
-          [(ngModel)]="profileInfo.religion"
+          [(ngModel)]="profileModel.religionModels.religionName"
           class="custom-select"
           id="Religion"
           name="religion"
           #inputReligion="ngModel"
           class="form-control form-control-sm"
         >
-          <option selected disabled>Select</option>
-          <option value="Catholic">Catholic</option>
-          <option value="Orthodox">Orthodox</option>
-          <option value="Muslim">Muslim</option>
-          <option value="Evangelical">Evangelical</option>
-          <option value="Other">Other</option>
+        <option *ngFor="let religion of  profileModel.religionModels">{{religion.religionName}}</option>
+
         </select>
         <div
           class="help is-error"
           *ngIf="inputReligion.touched && !inputReligion.valid"
         >
-          <div *ngIf="inputReligion?.errors.required">
+          <div *ngIf="inputReligion?.errors?.required">
             <span style="color: red; font-style:italic">
               Religion is required</span
             >
@@ -310,41 +297,59 @@
 
         <select
           required
-          [(ngModel)]="profileInfo.biher"
+          [(ngModel)]="profileModel.departmentModels.departmentName"
           class="custom-select"
           id="Department"
-          name="biher"
-          #inputBiher="ngModel"
+          name="department"
+          #inputDepartment="ngModel"
           class=" form-control form-control-sm"
         >
 
 
 
-          <option *ngFor="let department of  profileModel.departmentModels" disabled>{{department.departmentName}}</option>
+          <option *ngFor="let department of  profileModel.departmentModels">{{department.departmentName}}</option>
 
 
         </select>
         <div
           class="help is-error"
-          *ngIf="inputBiher.touched && !inputBiher.valid"
+          *ngIf="inputDepartment.touched && !inputDepartment.valid"
         >
-          <div *ngIf="inputBiher?.errors.required">
+          <div *ngIf="inputDepartment?.errors?.required">
             <span style="color: red; font-style:italic">
-              Biher is required</span
+              Department is required</span
             >
           </div>
         </div>
       </div>
+    </div>
+      <div class="form-row">
+      <div class="form-group col-md-12">
+          <label for="Address" style="color:blue; font-size: 20px">Address Information</label>
+          <br>
+          <small style="color: orange; font-style: italic">Please Select Address Type first to Proceed to the Details</small>
 
-      <div class="form-group col-md-6">
-
-
+          <select
+          required
+          [(ngModel)]="profileModel.addressModels.addressType"
+          class="custom-select"
+          id="Address"
+          name="address"
+          #inputAdrressType="ngModel"
+          class=" form-control form-control-sm"
+          >
+          
+        
+          <option *ngFor="let address of  profileModel.addressModels"> {{address.addressType}}</option>
+                   
+        </select>
       </div>
     </div>
+   
 
-    <fieldset id="fieldset2" *ngIf="primary">
+    <fieldset id="fieldset2" *ngIf="profileModel.addressModels.addressType==='Residence'">
 
-      <legend id="legend2">Address Details</legend>
+      <legend id="legend2">Home Address Details</legend>
       <div class="form-row">
         <div class="form-group col-md-12">
           <label for="Street">Street</label>
@@ -364,14 +369,14 @@
             class="help is-error"
             *ngIf="inputStreet.touched && !inputStreet.valid"
           >
-            <div *ngIf="inputStreet?.errors.required">
+            <div *ngIf="inputStreet?.errors?.required">
               <span style="color: red; font-style:italic">
-                Address is required</span
+                Street Address is required</span
               >
             </div>
-            <div *ngIf="inputStreet?.errors.minlength">
+            <div *ngIf="inputStreet?.errors?.minlength">
               <span style="color: red; font-style:italic">
-                Address should be at least
+               Street Address should be at least
                 {{
                   inputStreet?.errors.minlength.requiredLength
                 }}
@@ -401,16 +406,16 @@
             class="help is-error"
             *ngIf="inputCity.touched && !inputCity.valid"
           >
-            <div *ngIf="inputCity?.errors.required">
+            <div *ngIf="inputCity?.errors?.required">
               <span style="color: red; font-style:italic">
                 City is required</span
               >
             </div>
-            <div *ngIf="inputCity?.errors.minlength">
+            <div *ngIf="inputCity?.errors?.minlength">
               <span style="color: red; font-style:italic">
                 City should be at least
                 {{
-                  inputCity?.errors.minlength.requiredLength
+                  inputCity?.errors?.minlength.requiredLength
                 }}
                 characters</span
               >
@@ -439,7 +444,7 @@
             class="help is-error"
             *ngIf="inputZoba.touched && !inputZoba.valid"
           >
-            <div *ngIf="inputZoba?.errors.required">
+            <div *ngIf="inputZoba?.errors?.required">
               <span style="color: red; font-style:italic">
                 Zoba is required</span
               >
@@ -448,9 +453,9 @@
         </div>
       </div>
     </fieldset>
-    <fieldset id="fieldset2" *ngIf="secondary">
+    <fieldset id="fieldset2" *ngIf="profileModel.addressModels.addressType==='Work'">
 
-        <legend id="legend2">Address Details</legend>
+        <legend id="legend2">Work Address Details</legend>
         <div class="form-row">
           <div class="form-group col-md-12">
             <label for="Street">Street</label>
@@ -470,16 +475,16 @@
               class="help is-error"
               *ngIf="inputStreet.touched && !inputStreet.valid"
             >
-              <div *ngIf="inputStreet?.errors.required">
+              <div *ngIf="inputStreet?.errors?.required">
                 <span style="color: red; font-style:italic">
-                  Address is required</span
+                  Street is required</span
                 >
               </div>
-              <div *ngIf="inputStreet?.errors.minlength">
+              <div *ngIf="inputStreet?.errors?.minlength">
                 <span style="color: red; font-style:italic">
-                  Address should be at least
+                  Street Address should be at least
                   {{
-                    inputStreet?.errors.minlength.requiredLength
+                    inputStreet?.errors?.minlength.requiredLength
                   }}
                   characters</span
                 >
@@ -507,16 +512,16 @@
               class="help is-error"
               *ngIf="inputCity.touched && !inputCity.valid"
             >
-              <div *ngIf="inputCity?.errors.required">
+              <div *ngIf="inputCity?.errors?.required">
                 <span style="color: red; font-style:italic">
                   City is required</span
                 >
               </div>
-              <div *ngIf="inputCity?.errors.minlength">
+              <div *ngIf="inputCity?.errors?.minlength">
                 <span style="color: red; font-style:italic">
                   City should be at least
                   {{
-                    inputCity?.errors.minlength.requiredLength
+                    inputCity?.errors?.minlength.requiredLength
                   }}
                   characters</span
                 >
@@ -545,7 +550,7 @@
               class="help is-error"
               *ngIf="inputZoba.touched && !inputZoba.valid"
             >
-              <div *ngIf="inputZoba?.errors.required">
+              <div *ngIf="inputZoba?.errors?.required">
                 <span style="color: red; font-style:italic">
                   Zoba is required</span
                 >
@@ -554,9 +559,9 @@
           </div>
         </div>
       </fieldset>
-      <fieldset id="fieldset2" *ngIf="third">
+      <fieldset id="fieldset2" *ngIf="profileModel.addressModels.addressType==='Other'">
 
-          <legend id="legend2">Address Details</legend>
+          <legend id="legend2">Other Address Details</legend>
           <div class="form-row">
             <div class="form-group col-md-12">
               <label for="Street">Street</label>
@@ -576,16 +581,16 @@
                 class="help is-error"
                 *ngIf="inputStreet.touched && !inputStreet.valid"
               >
-                <div *ngIf="inputStreet?.errors.required">
+                <div *ngIf="inputStreet?.errors?.required">
                   <span style="color: red; font-style:italic">
-                    Address is required</span
+                    Street Address is required</span
                   >
                 </div>
-                <div *ngIf="inputStreet?.errors.minlength">
+                <div *ngIf="inputStreet?.errors?.minlength">
                   <span style="color: red; font-style:italic">
-                    Address should be at least
+                    Street Address should be at least
                     {{
-                      inputStreet?.errors.minlength.requiredLength
+                      inputStreet?.errors?.minlength.requiredLength
                     }}
                     characters</span
                   >
@@ -613,16 +618,16 @@
                 class="help is-error"
                 *ngIf="inputCity.touched && !inputCity.valid"
               >
-                <div *ngIf="inputCity?.errors.required">
+                <div *ngIf="inputCity?.errors?.required">
                   <span style="color: red; font-style:italic">
                     City is required</span
                   >
                 </div>
-                <div *ngIf="inputCity?.errors.minlength">
+                <div *ngIf="inputCity?.errors?.minlength">
                   <span style="color: red; font-style:italic">
                     City should be at least
                     {{
-                      inputCity?.errors.minlength.requiredLength
+                      inputCity?.errors?.minlength.requiredLength
                     }}
                     characters</span
                   >
@@ -647,11 +652,12 @@
                 <option value="Semienawi Keyh Bahri">Semienawi Keyh Bahri</option>
                 <option value="Debubawi Keyh Bahri">Debubawi Keyh Bahri</option>
               </select>
+              
               <div
                 class="help is-error"
                 *ngIf="inputZoba.touched && !inputZoba.valid"
               >
-                <div *ngIf="inputZoba?.errors.required">
+                <div *ngIf="inputZoba?.errors?.required">
                   <span style="color: red; font-style:italic">
                     Zoba is required</span
                   >
