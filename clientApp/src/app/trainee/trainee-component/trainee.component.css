@@ -1,41 +1,41 @@
-div .row{
-    margin-top: 2px;
-    margin-bottom:5px;
-    justify-content: space-between;
-
-
+.container-fluid .row {
+  height: 100%;
+  margin-top: 2px;
+  margin-bottom: 5px;
+  justify-content: space-between;
 }
-div .left, .right{
-    background-color:rgb(32, 53, 173);
-    height: 91vh;
-    border: 1px solid rgb(247, 244, 244);
-    border-radius: 1%;
+.container-fluid .row .left,
+.container-fluid .row .right {
+  height: 100vh;
+  background-color: rgb(32, 53, 173);
+  border: 1px solid rgb(247, 244, 244);
+  border-radius: 1%;
 }
-.left h4{
-    color: white;
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 20px;
-}
-
-.left .btn{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-style: italic;
-    border-color: rgb(233, 229, 229);
-
-}
-.center {
-    padding-left: 0px;
-    padding-right:0px;
-    border: 1px solid rgb(32, 53, 173);
-    border-radius: 1%;
-    background-color: rgb(236, 238, 241);
+.left h4 {
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
 }
 
-.right{
-    color: gold;
-    text-align: center;
-    padding-top: 70px;
+.left .btn {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-style: italic;
+  border-color: rgb(233, 229, 229);
+}
+.container-fluid .row .center {
+  height: 100%;
+  padding-left: 0px;
+  padding-right: 0px;
+  border: 1px solid rgb(32, 53, 173);
+  border-radius: 1%;
+  background-color: rgb(236, 238, 241);
+}
 
+.Eri-flag {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

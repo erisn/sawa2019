@@ -15,31 +15,25 @@ export class ProfileComponentComponent implements OnInit {
   constructor(private profileService: ProfileService) {}
 
   submitProfile() {
-    console.log (this.profileInfo);
+    console.log(this.profileInfo);
 
-    this.profileService
-      .sendProfile(this.profileInfo)
-      .subscribe(
-        data => {
-          // this.profileModel = data;
-          console.log('Post request success!', data);
-        },
-        error => console.log('Error!', error)
-      );
+    this.profileService.sendProfile(this.profileInfo).subscribe(
+      data => {
+        // this.profileModel = data;
+        console.log('Post request success!', data);
+      },
+      error => console.log('Error!', error)
+    );
   }
 
   getProfile() {
-
-
-    this.profileService
-      .getProfile()
-      .subscribe(
-        data => {
-          this.profileModel = data;
-          console.log('Get request success!', data);
-        } ,
-        error => console.log('Error!', error)
-      );
+    this.profileService.getProfile().subscribe(
+      data => {
+        this.profileModel = data;
+        console.log('Get request success!', data);
+      },
+      error => console.log('Error!', error)
+    );
   }
   ngOnInit() {
     this.getProfile();

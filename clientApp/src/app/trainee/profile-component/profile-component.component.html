@@ -14,7 +14,7 @@
         <input
           required
           minlength="3"
-          maxLength="15"
+          maxlength="15"
           [(ngModel)]="profileModel.userModels.firstName"
           name="firstName"
           #inputFirstName="ngModel"
@@ -184,7 +184,7 @@
 
         <div
           class="help is-error"
-          *ngIf="inputMotherName.touched && !inputMotherName.errors.valid"
+          *ngIf="inputMotherName.touched && !inputMotherName.valid"
         >
           <div *ngIf="inputMotherName?.errors?.required">
             <span style="color: red; font-style:italic"
@@ -330,6 +330,7 @@
           <small style="color: orange; font-style: italic">Please Select Address Type first to Proceed to the Details</small>
 
           <select
+          type="checkbox"
           required
           [(ngModel)]="profileModel.addressModels.addressType"
           class="custom-select"
@@ -341,6 +342,15 @@
           
         
           <option *ngFor="let address of  profileModel.addressModels"> {{address.addressType}}</option>
+
+          <div *ngFor="let address of  profileModel.addressModels">
+            <input type="checkbox"
+                      name="address"
+                      value="{{address.addressType}}"
+                      [(ngModel)]="address"/>
+    
+            <label>{{address.addressType}}</label>
+        </div>
                    
         </select>
       </div>
